@@ -11,11 +11,11 @@ public class Palette extends JFrame {
 
     private MenuBar menuBar;
     private Menu chooseFigure, chooseMode, chooseColor;
-    private MenuItem line, polygon, circle, ellipse, lineSegment, ray;
+    private MenuItem line, polygon, circle, ellipse, lineSegment, ray, customPolygon, polyLine, rectangle, rhombus, regularPolygon;
     private MenuItem draw, move;
     private MenuItem backgroundColor, borderColor;
     private JFrame app;
-    private Color bckColor =Color.PINK, brColor = Color.BLACK;
+    private Color bckColor = Color.PINK, brColor = Color.BLACK;
 
     private FigureType figureType;
     private boolean modeType;
@@ -43,6 +43,11 @@ public class Palette extends JFrame {
         chooseFigure.add(circle = new MenuItem("circle"));
         chooseFigure.add(ellipse = new MenuItem("ellipse"));
         chooseFigure.add(lineSegment = new MenuItem("lineSegment"));
+        chooseFigure.add(customPolygon = new MenuItem("customPolygon"));
+        chooseFigure.add(polyLine = new MenuItem(" polyLine"));
+        chooseFigure.add(rectangle = new MenuItem("rectangle"));
+        chooseFigure.add(rhombus = new MenuItem("rhombus"));
+        chooseFigure.add(regularPolygon = new MenuItem("regularPolygon"));
         chooseFigure.add(ray = new MenuItem("ray"));
 
         chooseMode = new Menu("Choose mode");
@@ -93,6 +98,31 @@ public class Palette extends JFrame {
             switch (event.getActionCommand()) {
                 case "line":
                     figureType = FigureType.LINE;
+                    System.out.println(figureType);
+
+                    break;
+                case " customPolygon":
+                    figureType = FigureType.CUSTOMPOLYGON;
+                    System.out.println(figureType);
+
+                    break;
+                case "polyLine":
+                    figureType = FigureType.POLYGON;
+                    System.out.println(figureType);
+
+                    break;
+                case "rectangle":
+                    figureType = FigureType.RECTANGLE;
+                    System.out.println(figureType);
+
+                    break;
+                case "rhombus":
+                    figureType = FigureType.RHOMBUS;
+                    System.out.println(figureType);
+
+                    break;
+                case "regularPolygon":
+                    figureType = FigureType.REGULARPOLYGON;
                     System.out.println(figureType);
 
                     break;
