@@ -11,6 +11,6 @@ public class Ray extends LineSegment {
 	
 	@Override
 	public void draw(Graphics g) {
-		
+		g.drawLine(getLocation().x,getLocation().y,getEnd().x,getEnd().y);
 	}
 }

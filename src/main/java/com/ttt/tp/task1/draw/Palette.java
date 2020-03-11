@@ -15,9 +15,11 @@ public class Palette extends JFrame {
     private MenuItem draw, move;
     private MenuItem backgroundColor, borderColor;
     private JFrame app;
+    private JPanel panel;
     private Color bckColor = Color.PINK, brColor = Color.BLACK;
 
     private FigureType figureType;
+
     private boolean modeType;
 
     public Palette() {
@@ -34,7 +36,8 @@ public class Palette extends JFrame {
     }
 
     public void createMenu() {
-        app.add(new DrawPanel());
+        panel = new DrawPanel();
+        app.add(panel);
         menuBar = new MenuBar();
         this.setMenuBar(menuBar);
         chooseFigure = new Menu("Choose figure");
@@ -67,12 +70,15 @@ public class Palette extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
                 bckColor = JColorChooser.showDialog(app, "ColorChooserDemo", null);
+                ((DrawPanel) panel).setBckColor(bckColor);
+
             }
         });
         borderColor.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 brColor = JColorChooser.showDialog(app, "ColorChooserDemo", null);
+                ((DrawPanel) panel).setBrColor(brColor);
             }
         });
         chooseFigure.addActionListener(figureListener);
@@ -126,11 +132,6 @@ public class Palette extends JFrame {
                     System.out.println(figureType);
 
                     break;
-                case "polygon":
-                    figureType = FigureType.POLYGON;
-                    System.out.println(figureType);
-
-                    break;
                 case "lineSegment":
                     figureType = FigureType.LINESEGMENT;
                     System.out.println(figureType);
@@ -154,6 +155,8 @@ public class Palette extends JFrame {
                 default:
                     figureType = FigureType.ELLIPSE;
             }
+            ((DrawPanel) panel).setFigureType(figureType);
+
         }
     };
 

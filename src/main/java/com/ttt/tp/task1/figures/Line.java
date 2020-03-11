@@ -11,6 +11,7 @@ public class Line extends Ray {
 	
 	@Override
 	public void draw(Graphics g) {
-		
+	super.draw(g);
+
 	}
 }

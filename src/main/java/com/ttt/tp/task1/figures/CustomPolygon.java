@@ -5,7 +5,7 @@ import java.awt.Point;
 
 public class CustomPolygon extends PolyLine {
 	
-	CustomPolygon(Point[] list, int n) {
+	public CustomPolygon(Point[] list, int n) {
 		super(list, n);
 	}
 	

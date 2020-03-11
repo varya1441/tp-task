@@ -13,10 +13,12 @@ public class RegularPolygon extends Shape {
 		this.setLocation(location);
 		this.n = n;
 		int r = (int) location.distance(p);
-		
+
+
 		for (int i = 0; i < n; i++) {
-			xpoints[i] = (int) (r * Math.cos(2 * Math.PI * i / n)) + location.x;
-			ypoints[i] = (int) (r * Math.cos(2 * Math.PI * i / n)) + location.y;
+			final double v = r * Math.cos(2 * Math.PI * i / n);
+			xpoints[i] = (int) v + location.x;
+			ypoints[i] = (int) v + location.y;
 		}
 	}
 

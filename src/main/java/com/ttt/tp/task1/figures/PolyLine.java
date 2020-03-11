@@ -6,7 +6,7 @@ import java.awt.Point;
 public class PolyLine extends Figure {
 	private LineSegment[] edges;
 
-	PolyLine(Point[] list, int n) {
+	public PolyLine(Point[] list, int n) {
 		edges = new LineSegment[n+1];
 		for (int i = 0; i < n - 1; i++) {
 			edges[i] = new LineSegment(list[i], list[i+1]);

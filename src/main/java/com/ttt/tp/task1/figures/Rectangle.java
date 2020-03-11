@@ -8,7 +8,7 @@ public class Rectangle extends Shape {
 	private int h, w;
 
 	public Rectangle(Point a1, Point a2) {
-		Point p1 = (Point) a2.clone();
+		Point p1 = (Point) a1.clone();
 		Point p2 = (Point) a2.clone();
 		if (p1.y < p2.y) {
 			if (p1.x > p2.x) {
